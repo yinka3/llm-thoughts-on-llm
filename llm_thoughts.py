@@ -4,8 +4,10 @@ from sentence_transformers import SentenceTransformer
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 import pprint
-
-apikey="AIzaSyA5zzlJ4Zloehnz6_r1P2FrpCiaciiSAAU"
+from dotenv import load_dotenv
+import os
+load_dotenv()
+apikey=os.environ.get("apikey")
 embed_model = SentenceTransformer("all-MiniLM-L6-v2")
 client = genai.Client(api_key=apikey)
 
